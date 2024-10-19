@@ -1,0 +1,43 @@
+{% load static %}
+<section class="text-white px-4 md:px-40 py-12 md:py-20 flex flex-col md:flex-row items-center justify-between bg-gray-900">
+    <!-- Image for mobile view -->
+    <div class="w-full md:hidden mt-16 flex justify-center mb-8">
+        <img src="{% static './images/myphoto.jpg' %}" class="h-52 w-52 rounded-full object-cover shadow-lg" alt="myphoto">
+    </div>
+
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-4xl md:text-5xl md:mt-28 font-bold font-serif mb-4">Hey, I'm Biki</h2>
+        
+        <!-- Typing effect text -->
+        <p class="text-xl text-yellow-100 font-medium mb-4" id="typed"></p>
+        
+        <p class="text-base md:text-lg text-slate-400 mb-4">
+            An aspiring <span class="text-yellow-400 font-bold">Django developer</span> passionate about building web applications and learning new technologies.
+        </p>
+        <p class="text-base md:text-lg text-slate-400 mb-6">
+            On this site, you can explore the projects I've worked on, read <a href="" class="text-violet-500 hover:text-white hover:border-b">articles</a> about Django and web development, and learn more <a href="" class="text-fuchsia-400 hover:text-white hover:border-b">about my</a> journey as a developer.
+        </p>
+        <!-- Add button or CTA -->
+        <a href="#projects" class="inline-block px-6 py-3 mt-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg">
+            Explore My Projects
+        </a>
+    </div>
+
+    <!-- Image for desktop view -->
+    <div class="w-full md:w-1/2 flex justify-center hidden mt-12 ml-40 md:flex">
+        <img src="{% static './images/myphoto.jpg' %}" class="h-60 w-60 rounded-full object-cover shadow-lg" alt="myphoto">
+    </div>
+</section>
+
+<!-- Typed.js script for typing effect -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed('#typed', {
+        strings: ["Enthusiastic Learner | Future Developer"], // Text to display in typing effect
+        typeSpeed: 75,              // Typing speed
+        backSpeed: 25,              // Backspace speed
+        loop: true,                 // Loop the typing effect
+        showCursor: false,           // Show the cursor
+    });
+</script>

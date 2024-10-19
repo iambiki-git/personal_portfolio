@@ -1,0 +1,61 @@
+{% load static %}
+<nav class="fixed top-0 left-0 w-full h-20 px-6 md:px-40 flex items-center justify-between bg-gray-900 text-white shadow-lg z-50">
+    <!-- Logo and Site Title -->
+    <div class="flex items-center">
+        <!-- Desktop Site Title -->
+        <h2 class="hidden md:block text-2xl font-bold text-slate-300 hover:text-slate-100 transition-all duration-300" style="font-family:cursive;">
+            <a href="#">BIKI</a>
+        </h2>
+
+        <!-- Mobile Logo -->
+        <a href="#" class="md:hidden">
+            <img src="{% static './images/logo.png' %}" alt="logo" class="h-12 w-12 object-contain">
+        </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex items-center gap-6 text-medium md:text-lg font-medium">
+        <li><a href="#" class="hover:text-slate-300 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-slate-300">Articles</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-slate-300">Projects</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-slate-300">About Me</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-slate-300">Resume</a></li>
+        <li>
+            <!-- Dark Mode Toggle Icon -->
+            <button class="focus:outline-none text-lg hover:text-slate-300 transition duration-300">
+                <i class='bx bx-moon'></i>
+            </button>
+        </li>
+    </ul>
+
+    <!-- Mobile Menu Button (Hamburger Icon) -->
+    <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none text-slate-300 hover:text-slate-100">
+            <i class="bx bx-menu text-3xl"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Dropdown Menu (Hidden by Default) -->
+<div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white px-6 py-4 mt-20">
+    <ul class="flex flex-col gap-4">
+        <li><a href="#" class="hover:text-slate-300 transition duration-300">Notes</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300">Articles</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300">Projects</a></li>
+        <li><a href="#" class="hover:text-slate-300 transition duration-300">About Me</a></li>
+        <li>
+            <button class="focus:outline-none text-lg hover:text-slate-300 transition duration-300">
+                <i class='bx bx-moon'></i>
+            </button>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
